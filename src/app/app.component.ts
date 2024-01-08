@@ -36,7 +36,10 @@ export class AppComponent {
   }
   movePlayer(playerIndex: number, steps: number): void {
     this.players[playerIndex] += steps;
-    if (this.snakesAndLadders[this.players[playerIndex]]) {
+    if((this.players[playerIndex]==100) || (this.players[playerIndex]>100)){
+      
+    }
+    else if (this.snakesAndLadders[this.players[playerIndex]]) {
       this.players[playerIndex] = this.snakesAndLadders[this.players[playerIndex]];
     }
   }
@@ -65,7 +68,6 @@ export class AppComponent {
     this.movePlayer(this.currentPlayer, steps);
     if (this.players[this.currentPlayer] >= this.squares.length - 1) {
           this.person = this.currentPlayer === 0 ? "red color" : "blue color";
-          this.winner=true;
           setTimeout(() => {
             this.resetGame();
           }, 5000);
@@ -76,11 +78,16 @@ export class AppComponent {
   }
   resetGame(): void {
     this.winnerImage = null;
-    this.players = [1, 1];
+    this.players = [0, 0];
     this.currentPlayer = 0;
     this.rolledNumber = null;
     this.winner=false;
     this.person='';
+  }
+  getColorGradient(): string {
+    const colors = ['#ff0000', '#00ff00', '#0000ff'];
+    const gradientDirection = 'to bottom right';
+    return `linear-gradient(${gradientDirection}, ${colors.join(', ')})`;
   }
 
 }
