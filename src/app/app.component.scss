@@ -1,0 +1,127 @@
+
+.board-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .dice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 150px;
+    margin-top: 5px;
+  }
+  .landed-on-snake {
+    /* Green color for the square where the player lands after hitting a snake */
+    border: 2px solid #FF0000;
+    background-color: #00FF00; /* Change to your preferred green color */
+  }
+  .landed-on-ladder {
+    /* Yellow color for the square where the player lands after climbing a ladder */
+    background-color: #FFFF00; /* Change to your preferred yellow color */
+  }
+  .dice.red
+  {
+    background-color: rgb(240, 9, 9);
+  }
+  .dice.blue
+  {
+    background-color: rgb(94, 39, 235);
+  }
+  .board {
+    display: grid;
+      grid-template-columns: repeat(10, 2fr);
+      width: 300px; /* Set the total width of the grid */
+    height: 300px;
+      //margin: 60px auto 0 auto;
+      position: relative;
+      z-index: 1;
+      margin-left:0px;
+  }
+  .board::before {
+    position: relative;
+    background-image: url("https://miro.medium.com/v2/resize:fit:978/1*Qocq8CWeN3yacR_dxxbuiQ.png");
+    background-position: 8px -615px; /* top left corner */
+  /* z-index: -1; */
+  margin: 0;
+    content: "";
+    position: absolute;
+    bottom: 500px;
+    top: 0px;
+    left: 0;
+    width: 656px;
+    height: 645px;
+    background-image: url("https://miro.medium.com/v2/resize:fit:978/1*Qocq8CWeN3yacR_dxxbuiQ.png");
+    background-size: cover;
+    background-position: right 20px bottom 20px;
+    background-repeat: no-repeat;
+    z-index:-1; /* Send it to the back */
+  }
+  .square {
+    width: 60px;
+        height: 60px;
+        border: 1px solid black;
+  }
+  .player {
+    position: absolute;
+    width: 20px; /* Adjust the player width */
+    height: 20px; /* Adjust the player height */
+    border-radius: 50%;
+  }
+  .player1,.player2 {
+    width: 75%;
+    height: 75%;
+    padding:5px;
+  }
+  .dice {
+    width: 100px; /* Adjust the dice width */
+    height: 100px; /* Adjust the dice height */
+    cursor: pointer;
+  }
+  .winner-message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .winner-image {
+    width: 150px; /* Adjust the size as needed */
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+header {
+    background: linear-gradient(135deg, #3498db, #e74c3c); /* Gradient background from blue to red */
+    color: #fff; /* Header text color - White */
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 2.5em; /* Font size */
+    font-family: 'Pacifico', cursive; /* Choose a Google Font or any other font you prefer */
+    font-weight: bold; /* Bold font */
+    letter-spacing: 2px; /* Letter spacing for emphasis */
+  }
+  
+  /* Additional styling for emphasis on hover */
+  h1:hover {
+    text-shadow: 2px 2px 4px rgba(63, 18, 18, 0.8); /* White text shadow on hover */
+    transition: text-shadow 0.3s; /* Smooth transition for text shadow */
+  }
+  .number{
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left:180px;
+
+  }
+  .win{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+  }
+  
